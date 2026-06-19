@@ -243,6 +243,16 @@ export default function Home() {
                 </div>
               )}
 
+              {sel.status === OPEN && !isExpired(sel) && fv[audIdx] && (
+                <div className="card" style={{ padding: 16, marginBottom: 16, display: "flex", alignItems: "center", justifyContent: "space-between", gap: 14, flexWrap: "wrap", background: "var(--bg)" }}>
+                  <div style={{ fontSize: 14, color: "var(--mute)" }}>Stake on <b style={{ color: "var(--ink)" }}>{fv[audIdx].label}</b> <span style={{ color: "var(--faint)", fontSize: 13 }}>· tap a row to switch</span></div>
+                  <div style={{ display: "flex", alignItems: "center", gap: 8, flexWrap: "wrap" }}>
+                    {STAKE_CHIPS.map((c) => <button key={c} className="chip" data-on={chip === c} onClick={() => setChip(c)}>${c}</button>)}
+                    <button onClick={() => doStake(sel.id, audIdx)} disabled={!!busy} className="btn btn--lime btn--sm"><Icon n="coin" s={16} /> {busy === "stake" ? "Staking…" : `Stake $${chip}`}</button>
+                  </div>
+                </div>
+              )}
+
               <div className="trackhead label"><span>#</span><span>Variant</span><span>Author</span><span style={{ textAlign: "right" }}>Split</span></div>
               {sel.variants.map((v, i) => {
                 const sh = share(v.staked, sel.pot);
