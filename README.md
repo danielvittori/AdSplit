@@ -2,6 +2,10 @@
 
 A media-buyer's test plan, run on-chain. Put two to four ad creatives in front of a crowd, let them put cents behind the variant that actually hooks them, and read the winner *before* a single dollar of campaign budget gets spent. The variant that pulls the most money is the variant you scale.
 
+<p align="center">
+  <img src="art/meter.svg" width="760" alt="The split meter: an equalizer showing the live USDC pot split across three ad variants, the leader pulling the most money">
+</p>
+
 ```
 Objective    Pick the winning creative before the campaign spends real budget.
 Hypothesis   A small real-money stake from many viewers predicts the high-CTR variant

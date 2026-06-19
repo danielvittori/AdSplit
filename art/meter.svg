@@ -1,0 +1,110 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 300" width="760" height="300" role="img" aria-label="AdSplit split meter: an equalizer showing the live USDC pot split across three ad variants, the leader pulling the most money">
+  <defs>
+    <linearGradient id="as-pane" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#15101d"/>
+      <stop offset="100%" stop-color="#100b17"/>
+    </linearGradient>
+    <linearGradient id="as-volt" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0%" stop-color="#6d3fe0"/>
+      <stop offset="100%" stop-color="#8b5cf6"/>
+    </linearGradient>
+    <linearGradient id="as-mag" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0%" stop-color="#b3216e"/>
+      <stop offset="100%" stop-color="#f0379b"/>
+    </linearGradient>
+    <linearGradient id="as-cyan" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0%" stop-color="#1399b0"/>
+      <stop offset="100%" stop-color="#22d3ee"/>
+    </linearGradient>
+    <linearGradient id="as-pot" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#9fc81f"/>
+      <stop offset="100%" stop-color="#c6f135"/>
+    </linearGradient>
+    <filter id="as-glow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="4" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="760" height="300" rx="18" fill="#0b0710"/>
+  <rect x="10" y="10" width="740" height="280" rx="16" fill="url(#as-pane)" stroke="#271c36"/>
+
+  <!-- header: brand + live pill -->
+  <circle cx="40" cy="44" r="11" fill="none" stroke="#8b5cf6" stroke-width="2.5"/>
+  <circle cx="40" cy="44" r="3.5" fill="#f0379b"/>
+  <text x="60" y="42" font-family="'Trebuchet MS', system-ui, sans-serif" font-weight="700" font-size="17" fill="#f4eefb" letter-spacing="0.3">AdSplit</text>
+  <text x="60" y="56" font-family="ui-monospace,'Courier New',monospace" font-size="9.5" letter-spacing="2.5" fill="#a192b8">FREQUENCY · SPLIT METER</text>
+
+  <g transform="translate(566,34)">
+    <rect width="74" height="22" rx="11" fill="rgba(34,211,238,0.08)" stroke="rgba(34,211,238,0.4)"/>
+    <circle cx="15" cy="11" r="3.5" fill="#22d3ee" filter="url(#as-glow)"/>
+    <text x="27" y="15" font-family="ui-monospace,'Courier New',monospace" font-size="10" fill="#22d3ee" letter-spacing="1">LIVE</text>
+  </g>
+  <!-- lime USDC pot readout (money = lime only) -->
+  <g transform="translate(648,34)">
+    <rect width="86" height="22" rx="11" fill="rgba(198,241,53,0.08)" stroke="rgba(198,241,53,0.4)"/>
+    <text x="43" y="15" text-anchor="middle" font-family="ui-monospace,'Courier New',monospace" font-size="10.5" fill="#c6f135" letter-spacing="0.5">POT $1.85</text>
+  </g>
+
+  <!-- baseline -->
+  <line x1="36" y1="232" x2="724" y2="232" stroke="#271c36" stroke-width="1.5"/>
+
+  <!-- ===== three variant columns, each an equalizer cluster sized to its pot share ===== -->
+  <!-- helper geometry: 8 eq bars per variant; column heights encode share -->
+
+  <!-- Variant A — LEADER (45%), violet, brightest, with playhead -->
+  <g transform="translate(70,0)">
+    <g fill="url(#as-volt)">
+      <rect x="0"   y="150" width="14" height="82" rx="2"/>
+      <rect x="20"  y="120" width="14" height="112" rx="2"/>
+      <rect x="40"  y="96"  width="14" height="136" rx="2"/>
+      <rect x="60"  y="78"  width="14" height="154" rx="2"/>
+      <rect x="80"  y="104" width="14" height="128" rx="2"/>
+      <rect x="100" y="134" width="14" height="98" rx="2"/>
+      <rect x="120" y="160" width="14" height="72" rx="2"/>
+      <rect x="140" y="178" width="14" height="54" rx="2"/>
+    </g>
+    <!-- cyan playhead over the leader -->
+    <rect x="73" y="70" width="2" height="162" fill="#22d3ee" filter="url(#as-glow)"/>
+    <rect x="0" y="244" width="154" height="3" rx="1.5" fill="#8b5cf6"/>
+    <text x="0" y="266" font-family="'Trebuchet MS',system-ui,sans-serif" font-weight="600" font-size="12.5" fill="#f4eefb">Variant A</text>
+    <text x="154" y="266" text-anchor="end" font-family="ui-monospace,'Courier New',monospace" font-size="12" fill="#c6f135">45%</text>
+    <text x="0" y="282" font-family="ui-monospace,'Courier New',monospace" font-size="9" letter-spacing="1.5" fill="#c6f135">$0.83 ◂ LEADING</text>
+  </g>
+
+  <!-- Variant B (32%), magenta -->
+  <g transform="translate(310,0)">
+    <g fill="url(#as-mag)">
+      <rect x="0"   y="176" width="14" height="56" rx="2"/>
+      <rect x="20"  y="156" width="14" height="76" rx="2"/>
+      <rect x="40"  y="134" width="14" height="98" rx="2"/>
+      <rect x="60"  y="122" width="14" height="110" rx="2"/>
+      <rect x="80"  y="140" width="14" height="92" rx="2"/>
+      <rect x="100" y="162" width="14" height="70" rx="2"/>
+      <rect x="120" y="180" width="14" height="52" rx="2"/>
+      <rect x="140" y="192" width="14" height="40" rx="2"/>
+    </g>
+    <rect x="0" y="244" width="154" height="3" rx="1.5" fill="#f0379b"/>
+    <text x="0" y="266" font-family="'Trebuchet MS',system-ui,sans-serif" font-weight="600" font-size="12.5" fill="#f4eefb">Variant B</text>
+    <text x="154" y="266" text-anchor="end" font-family="ui-monospace,'Courier New',monospace" font-size="12" fill="#a192b8">32%</text>
+    <text x="0" y="282" font-family="ui-monospace,'Courier New',monospace" font-size="9" letter-spacing="1.5" fill="#a192b8">$0.59</text>
+  </g>
+
+  <!-- Variant C (23%), cyan -->
+  <g transform="translate(550,0)">
+    <g fill="url(#as-cyan)">
+      <rect x="0"   y="192" width="14" height="40" rx="2"/>
+      <rect x="20"  y="178" width="14" height="54" rx="2"/>
+      <rect x="40"  y="164" width="14" height="68" rx="2"/>
+      <rect x="60"  y="156" width="14" height="76" rx="2"/>
+      <rect x="80"  y="170" width="14" height="62" rx="2"/>
+      <rect x="100" y="184" width="14" height="48" rx="2"/>
+      <rect x="120" y="196" width="14" height="36" rx="2"/>
+      <rect x="140" y="204" width="14" height="28" rx="2"/>
+    </g>
+    <rect x="0" y="244" width="154" height="3" rx="1.5" fill="#22d3ee"/>
+    <text x="0" y="266" font-family="'Trebuchet MS',system-ui,sans-serif" font-weight="600" font-size="12.5" fill="#f4eefb">Variant C</text>
+    <text x="154" y="266" text-anchor="end" font-family="ui-monospace,'Courier New',monospace" font-size="12" fill="#a192b8">23%</text>
+    <text x="0" y="282" font-family="ui-monospace,'Courier New',monospace" font-size="9" letter-spacing="1.5" fill="#a192b8">$0.43</text>
+  </g>
+</svg>
