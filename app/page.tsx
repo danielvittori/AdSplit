@@ -201,9 +201,9 @@ export default function Home() {
                 <div onClick={() => setWalletOpen(false)} style={{ position: "fixed", inset: 0, zIndex: 60 }} />
                 <div className="card" style={{ position: "absolute", top: "calc(100% + 8px)", right: 0, zIndex: 61, minWidth: 230, background: "var(--surface)", overflow: "hidden" }}>
                   <div style={{ padding: "13px 15px" }}><div className="label">Wallet</div><div className="mono" style={{ fontSize: 13.5, marginTop: 5 }}>{shortAddr(account, 9, 6)}</div><div className="mono pot-text" style={{ fontSize: 12, marginTop: 5 }}>{balance || "0"} USDC</div></div>
-                  {!chainOk && <button className="menu-item" style={{ color: "var(--bad)" }} onClick={() => switchToArc().catch(() => {})}>Switch to ARC ↗</button>}
-                  <a className="menu-item" href={`${ARCSCAN}/address/${account}`} target="_blank" rel="noopener noreferrer">View on ArcScan ↗</a>
-                  <button className="menu-item danger" onClick={() => { setWalletOpen(false); disconnect(); }}>Disconnect</button>
+                  {!chainOk && <button className="console-line" style={{ color: "var(--bad)" }} onClick={() => switchToArc().catch(() => {})}>Switch to ARC ↗</button>}
+                  <a className="console-line" href={`${ARCSCAN}/address/${account}`} target="_blank" rel="noopener noreferrer">View on ArcScan ↗</a>
+                  <button className="console-line danger" onClick={() => { setWalletOpen(false); disconnect(); }}>Disconnect</button>
                 </div>
               </>)}
             </div>
@@ -219,7 +219,7 @@ export default function Home() {
 
           {sel ? (
             /* ── battle album view ── */
-            <div className="rise">
+            <div className="mix">
               <div style={{ display: "flex", gap: 24, alignItems: "flex-end", marginBottom: 26, flexWrap: "wrap" }}>
                 <div style={{ width: 200, flexShrink: 0 }}><Cover b={sel} size={200} radius={16} /></div>
                 <div style={{ minWidth: 0 }}>
@@ -291,7 +291,7 @@ export default function Home() {
             </div>
           ) : (
             /* ── stage / explore / library feed ── */
-            <div className="rise">
+            <div className="mix">
               <h1 className="display" style={{ fontSize: 34, marginBottom: 4 }}>{nav === "library" ? "My Rack" : nav === "explore" ? "Explore" : "Stage"}</h1>
               <p style={{ color: "var(--mute)", fontSize: 14.5, marginBottom: 22 }}>
                 {nav === "library" ? "Battles you've created." : "Live creative battles — stake on the one that hooks you. The best creative takes the whole USDC pot."}
@@ -376,7 +376,7 @@ export default function Home() {
         )}
       </aside>
 
-      {toast && <div className="card mono rise" style={{ position: "fixed", bottom: 22, left: "50%", transform: "translateX(-50%)", zIndex: 300, padding: "11px 18px", fontSize: 13, background: "var(--raise)", color: toast.startsWith("✓") ? "var(--good)" : toast.startsWith("✗") ? "var(--bad)" : "var(--ink)" }}>{toast}</div>}
+      {toast && <div className="card mono mix" style={{ position: "fixed", bottom: 22, left: "50%", transform: "translateX(-50%)", zIndex: 300, padding: "11px 18px", fontSize: 13, background: "var(--raise)", color: toast.startsWith("✓") ? "var(--good)" : toast.startsWith("✗") ? "var(--bad)" : "var(--ink)" }}>{toast}</div>}
 
       <CreateBattleModal open={createOpen} onClose={() => setCreateOpen(false)} onCreate={doCreate} busy={busy === "create"} msg={createMsg} />
     </div>

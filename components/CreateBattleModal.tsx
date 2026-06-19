@@ -69,7 +69,7 @@ export default function CreateBattleModal({
 
   return (
     <div onClick={onClose} style={{ position: "fixed", inset: 0, zIndex: 200, background: "rgba(5,3,9,0.72)", backdropFilter: "blur(6px)", display: "flex", alignItems: "center", justifyContent: "center", padding: 20, overflow: "auto" }}>
-      <div onClick={(e) => e.stopPropagation()} className="card rise" style={{ width: "min(660px, 100%)", maxHeight: "92vh", overflow: "auto", padding: 28, background: "var(--surface)" }}>
+      <div onClick={(e) => e.stopPropagation()} className="card mix" style={{ width: "min(660px, 100%)", maxHeight: "92vh", overflow: "auto", padding: 28, background: "var(--surface)" }}>
         <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 22 }}>
           <div>
             <div className="label" style={{ color: "var(--volt)" }}>New battle</div>
